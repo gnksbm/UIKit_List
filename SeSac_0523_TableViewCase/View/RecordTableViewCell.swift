@@ -1,5 +1,5 @@
 //
-//  ShoppingTableViewCell.swift
+//  RecordTableViewCell.swift
 //  SeSac_0523_TableViewCase
 //
 //  Created by gnksbm on 5/23/24.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class ShoppingTableViewCell: UITableViewCell {
-    private var checkButtonClosure: (() -> Void)?
-    private var favoriteButtonClosure: (() -> Void)?
+final class RecordTableViewCell: UITableViewCell {
+    private var prepareCheckButtonClosure: (() -> Void) = { }
+    private var prepareStarButtonClosure: (() -> Void) = { }
     
     private let cellBackgroundView = {
         let view = UIView()
@@ -20,22 +20,12 @@ final class ShoppingTableViewCell: UITableViewCell {
     private lazy var checkButton = {
         let button = UIButton()
         button.tintColor = .black
-        button.addTarget(
-            self,
-            action: #selector(checkButtonTapped),
-            for: .touchUpInside
-        )
         return button
     }()
     private let messageLabel = UILabel()
-    private lazy var favoriteButton = {
+    private lazy var starButton = {
         let button = UIButton()
         button.tintColor = .black
-        button.addTarget(
-            self,
-            action: #selector(favoriteButtonTapped),
-            for: .touchUpInside
-        )
         return button
     }()
     
@@ -52,35 +42,47 @@ final class ShoppingTableViewCell: UITableViewCell {
         super.prepareForReuse()
         checkButton.setImage(nil, for: .normal)
         messageLabel.text = nil
-        favoriteButton.setImage(nil, for: .normal)
-        checkButtonClosure = nil
-        favoriteButtonClosure = nil
+        starButton.setImage(nil, for: .normal)
+        prepareCheckButtonClosure()
+        prepareStarButtonClosure()
     }
     
-    func updateUI(model: ShoppingModel) {
-        let checkImageName = model.isPurchased ? "checkmark.square.fill" : "checkmark.square"
+    func configureCell(state: RecordCellState, index: Int) {
+        let checkImageName = state.isChecked ? "checkmark.square.fill" : "checkmark.square"
         checkButton.setImage(
             .init(systemName: checkImageName),
             for: .normal
         )
-        messageLabel.text = model.message
-        let favoriteImageName = model.isFavorite ? "star.fill" : "star"
-        favoriteButton.setImage(
-            .init(systemName: favoriteImageName),
+        checkButton.tag = index
+        messageLabel.text = state.message
+        let starImageName = state.isStarred ? "star.fill" : "star"
+        starButton.setImage(
+            .init(systemName: starImageName),
             for: .normal
         )
+        starButton.tag = index
     }
     
-    func setCheckButtonClosure(
-        _ action: @escaping () -> Void
-    ) {
-        self.checkButtonClosure = action
+    func addCheckButtonTarget(_ target: Any?, action: Selector) {
+        checkButton.addTarget(target, action: action, for: .touchUpInside)
+        prepareCheckButtonClosure = {
+            self.checkButton.removeTarget(
+                target,
+                action: action,
+                for: .touchUpInside
+            )
+        }
     }
     
-    func setFavoriteButtonClosure(
-        _ action: @escaping () -> Void
-    ) {
-        self.favoriteButtonClosure = action
+    func addStarButtonTarget(_ target: Any?, action: Selector) {
+        starButton.addTarget(target, action: action, for: .touchUpInside)
+        prepareStarButtonClosure = {
+            self.starButton.removeTarget(
+                target,
+                action: action,
+                for: .touchUpInside
+            )
+        }
     }
     
     private func configureUI() {
@@ -88,7 +90,7 @@ final class ShoppingTableViewCell: UITableViewCell {
             cellBackgroundView,
             checkButton,
             messageLabel,
-            favoriteButton,
+            starButton,
         ].forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -136,28 +138,20 @@ final class ShoppingTableViewCell: UITableViewCell {
                 equalTo: checkButton.centerYAnchor
             ),
             
-            favoriteButton.leadingAnchor.constraint(
+            starButton.leadingAnchor.constraint(
                 equalTo: messageLabel.trailingAnchor,
                 constant: 20
             ),
-            favoriteButton.trailingAnchor.constraint(
+            starButton.trailingAnchor.constraint(
                 equalTo: cellBackgroundView.trailingAnchor,
                 constant: -20
             ),
-            favoriteButton.widthAnchor.constraint(
+            starButton.widthAnchor.constraint(
                 equalTo: checkButton.widthAnchor
             ),
-            favoriteButton.centerYAnchor.constraint(
+            starButton.centerYAnchor.constraint(
                 equalTo: checkButton.centerYAnchor
             ),
         ])
-    }
-    
-    @objc private func checkButtonTapped() {
-        checkButtonClosure?()
-    }
-    
-    @objc private func favoriteButtonTapped() {
-        favoriteButtonClosure?()
     }
 }

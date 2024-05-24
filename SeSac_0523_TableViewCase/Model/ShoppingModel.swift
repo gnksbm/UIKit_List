@@ -23,23 +23,23 @@ struct ShoppingModel: Codable {
     }
 }
 
-extension Array where Element == ShoppingModel {
-    mutating func toggleFavorite(index: Int) {
-        var updatedElement = remove(at: index)
-        updatedElement.isFavorite.toggle()
-        insert(updatedElement, at: index)
+
+extension ShoppingModel: RecordCellState {
+    var isChecked: Bool {
+        get {
+            isPurchased
+        }
+        set {
+            isPurchased = newValue
+        }
     }
     
-    mutating func togglePurchased(index: Int) {
-        var updatedElement = remove(at: index)
-        updatedElement.isPurchased.toggle()
-        insert(updatedElement, at: index)
-    }
-    
-    mutating func addNewItem(message: String?) throws {
-        guard let message else { throw ShoppingModelError.unknown }
-        guard !message.isEmpty else { throw ShoppingModelError.emptyMessage }
-        let newItem = Element(message: message)
-        self.insert(newItem, at: 0)
+    var isStarred: Bool {
+        get {
+            isFavorite
+        }
+        set {
+            isFavorite = newValue
+        }
     }
 }

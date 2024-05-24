@@ -13,11 +13,12 @@
 		BE068E822BFF27430014D9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE068E812BFF27430014D9C4 /* Assets.xcassets */; };
 		BE068E852BFF27430014D9C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE068E842BFF27430014D9C4 /* Base */; };
 		BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */; };
-		BE9D17072BFF2C8D00F75525 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17062BFF2C8D00F75525 /* ShoppingViewController.swift */; };
+		BE2848C12C007F7B00D5E817 /* RecordCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C02C007F7B00D5E817 /* RecordCellState.swift */; };
+		BE9D17072BFF2C8D00F75525 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */; };
 		BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */; };
-		BE9D170B2BFF410500F75525 /* ShoppingModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170A2BFF410500F75525 /* ShoppingModelError.swift */; };
+		BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170A2BFF410500F75525 /* RecordMessageError.swift */; };
 		BE9D170D2BFF412100F75525 /* ShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170C2BFF412100F75525 /* ShoppingModel.swift */; };
-		BE9D170F2BFF413200F75525 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170E2BFF413200F75525 /* ShoppingTableViewCell.swift */; };
+		BE9D170F2BFF413200F75525 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170E2BFF413200F75525 /* RecordTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +30,12 @@
 		BE068E842BFF27430014D9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE068E862BFF27430014D9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
-		BE9D17062BFF2C8D00F75525 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		BE2848C02C007F7B00D5E817 /* RecordCellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCellState.swift; sourceTree = "<group>"; };
+		BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
-		BE9D170A2BFF410500F75525 /* ShoppingModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingModelError.swift; sourceTree = "<group>"; };
+		BE9D170A2BFF410500F75525 /* RecordMessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMessageError.swift; sourceTree = "<group>"; };
 		BE9D170C2BFF412100F75525 /* ShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingModel.swift; sourceTree = "<group>"; };
-		BE9D170E2BFF413200F75525 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		BE9D170E2BFF413200F75525 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +84,8 @@
 		BE9D17102BFF414B00F75525 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BE9D17062BFF2C8D00F75525 /* ShoppingViewController.swift */,
-				BE9D170E2BFF413200F75525 /* ShoppingTableViewCell.swift */,
+				BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */,
+				BE9D170E2BFF413200F75525 /* RecordTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,8 +93,9 @@
 		BE9D17112BFF415200F75525 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE2848C02C007F7B00D5E817 /* RecordCellState.swift */,
 				BE9D170C2BFF412100F75525 /* ShoppingModel.swift */,
-				BE9D170A2BFF410500F75525 /* ShoppingModelError.swift */,
+				BE9D170A2BFF410500F75525 /* RecordMessageError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,12 +181,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9D170D2BFF412100F75525 /* ShoppingModel.swift in Sources */,
-				BE9D170F2BFF413200F75525 /* ShoppingTableViewCell.swift in Sources */,
-				BE9D170B2BFF410500F75525 /* ShoppingModelError.swift in Sources */,
+				BE9D170F2BFF413200F75525 /* RecordTableViewCell.swift in Sources */,
+				BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */,
 				BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */,
 				BE068E792BFF27410014D9C4 /* AppDelegate.swift in Sources */,
 				BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */,
-				BE9D17072BFF2C8D00F75525 /* ShoppingViewController.swift in Sources */,
+				BE2848C12C007F7B00D5E817 /* RecordCellState.swift in Sources */,
+				BE9D17072BFF2C8D00F75525 /* RecordViewController.swift in Sources */,
 				BE068E7B2BFF27410014D9C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
