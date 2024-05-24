@@ -27,7 +27,7 @@ final class ShoppingViewController: UITableViewController {
     private func configureTableView() {
         tableView.register(
             ShoppingTableViewCell.self,
-            forCellReuseIdentifier: String(describing: ShoppingTableViewCell.self)
+            forCellReuseIdentifier: ShoppingTableViewCell.identifier
         )
     }
     
@@ -54,7 +54,7 @@ extension ShoppingViewController {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: ShoppingTableViewCell.self),
+            withIdentifier: ShoppingTableViewCell.identifier,
             for: indexPath
         ) as? ShoppingTableViewCell else { return .init() }
         cell.updateUI(model: shoppingList[indexPath.row])

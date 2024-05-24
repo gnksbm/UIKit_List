@@ -12,6 +12,7 @@
 		BE068E802BFF27410014D9C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE068E7F2BFF27410014D9C4 /* Base */; };
 		BE068E822BFF27430014D9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE068E812BFF27430014D9C4 /* Assets.xcassets */; };
 		BE068E852BFF27430014D9C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE068E842BFF27430014D9C4 /* Base */; };
+		BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */; };
 		BE9D17072BFF2C8D00F75525 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17062BFF2C8D00F75525 /* ShoppingViewController.swift */; };
 		BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */; };
 		BE9D170B2BFF410500F75525 /* ShoppingModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170A2BFF410500F75525 /* ShoppingModelError.swift */; };
@@ -27,6 +28,7 @@
 		BE068E812BFF27430014D9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE068E842BFF27430014D9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE068E862BFF27430014D9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		BE9D17062BFF2C8D00F75525 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		BE9D170A2BFF410500F75525 /* ShoppingModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingModelError.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */,
+				BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				BE9D170B2BFF410500F75525 /* ShoppingModelError.swift in Sources */,
 				BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */,
 				BE068E792BFF27410014D9C4 /* AppDelegate.swift in Sources */,
+				BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */,
 				BE9D17072BFF2C8D00F75525 /* ShoppingViewController.swift in Sources */,
 				BE068E7B2BFF27410014D9C4 /* SceneDelegate.swift in Sources */,
 			);

@@ -14,7 +14,6 @@ struct UserDefaultsWrapper<T: Codable> {
     
     var wrappedValue: T {
         get {
-            print(#function)
             guard let data = UserDefaults.standard.data(forKey: key) else {
                 print("저장된 데이터 없음")
                 return defaultValue
