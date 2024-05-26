@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct ShoppingList {
+    @UserDefaultsWrapper(key: .shoppingList, defaultValue: [])
+    var shoppingList: [ShoppingModel]
+}
+
 struct ShoppingModel: Codable {
     var isPurchased: Bool
     let message: String

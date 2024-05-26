@@ -12,8 +12,11 @@
 		BE068E802BFF27410014D9C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE068E7F2BFF27410014D9C4 /* Base */; };
 		BE068E822BFF27430014D9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE068E812BFF27430014D9C4 /* Assets.xcassets */; };
 		BE068E852BFF27430014D9C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE068E842BFF27430014D9C4 /* Base */; };
-		BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */; };
+		BE2848B92C0018F500D5E817 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848B82C0018F500D5E817 /* UITableView+.swift */; };
 		BE2848C12C007F7B00D5E817 /* RecordCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C02C007F7B00D5E817 /* RecordCellState.swift */; };
+		BE2848C32C00A59A00D5E817 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C22C00A59A00D5E817 /* TodoModel.swift */; };
+		BE2848C52C00A6DC00D5E817 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C42C00A6DC00D5E817 /* UserDefaultsKey.swift */; };
+		BE2848C92C00A70300D5E817 /* ListKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C82C00A70300D5E817 /* ListKind.swift */; };
 		BE9D17072BFF2C8D00F75525 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */; };
 		BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */; };
 		BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170A2BFF410500F75525 /* RecordMessageError.swift */; };
@@ -29,8 +32,11 @@
 		BE068E812BFF27430014D9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE068E842BFF27430014D9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE068E862BFF27430014D9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		BE2848B82C0018F500D5E817 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		BE2848C02C007F7B00D5E817 /* RecordCellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCellState.swift; sourceTree = "<group>"; };
+		BE2848C22C00A59A00D5E817 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		BE2848C42C00A6DC00D5E817 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		BE2848C82C00A70300D5E817 /* ListKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKind.swift; sourceTree = "<group>"; };
 		BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		BE9D170A2BFF410500F75525 /* RecordMessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMessageError.swift; sourceTree = "<group>"; };
@@ -94,8 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				BE2848C02C007F7B00D5E817 /* RecordCellState.swift */,
-				BE9D170C2BFF412100F75525 /* ShoppingModel.swift */,
 				BE9D170A2BFF410500F75525 /* RecordMessageError.swift */,
+				BE2848C22C00A59A00D5E817 /* TodoModel.swift */,
+				BE9D170C2BFF412100F75525 /* ShoppingModel.swift */,
+				BE2848C82C00A70300D5E817 /* ListKind.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,7 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */,
-				BE2848B82C0018F500D5E817 /* UITableViewCell+.swift */,
+				BE2848C42C00A6DC00D5E817 /* UserDefaultsKey.swift */,
+				BE2848B82C0018F500D5E817 /* UITableView+.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -182,13 +191,16 @@
 			files = (
 				BE9D170D2BFF412100F75525 /* ShoppingModel.swift in Sources */,
 				BE9D170F2BFF413200F75525 /* RecordTableViewCell.swift in Sources */,
+				BE2848C92C00A70300D5E817 /* ListKind.swift in Sources */,
 				BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */,
 				BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */,
 				BE068E792BFF27410014D9C4 /* AppDelegate.swift in Sources */,
-				BE2848B92C0018F500D5E817 /* UITableViewCell+.swift in Sources */,
+				BE2848B92C0018F500D5E817 /* UITableView+.swift in Sources */,
 				BE2848C12C007F7B00D5E817 /* RecordCellState.swift in Sources */,
 				BE9D17072BFF2C8D00F75525 /* RecordViewController.swift in Sources */,
 				BE068E7B2BFF27410014D9C4 /* SceneDelegate.swift in Sources */,
+				BE2848C32C00A59A00D5E817 /* TodoModel.swift in Sources */,
+				BE2848C52C00A6DC00D5E817 /* UserDefaultsKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

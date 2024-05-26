@@ -13,6 +13,15 @@ protocol RecordCellState: Codable {
     var isStarred: Bool { get set }
 }
 
+extension RecordCellState {
+    func validateMessage() throws {
+        guard !message.isEmpty else { throw RecordMessageError.emptyMessage }
+        guard !message
+            .replacingOccurrences(of: " ", with: "")
+            .isEmpty else { throw RecordMessageError.onlyWhitespace }
+    }
+}
+
 extension Array where Element: RecordCellState {
     mutating func toggleStar(index: Int) {
         var updatedElement = remove(at: index)
@@ -24,12 +33,5 @@ extension Array where Element: RecordCellState {
         var updatedElement = remove(at: index)
         updatedElement.isChecked.toggle()
         insert(updatedElement, at: index)
-    }
-    
-    mutating func validateMessage(element: Element) throws {
-        guard !element.message.isEmpty else { throw RecordMessageError.emptyMessage }
-        guard !element.message
-            .replacingOccurrences(of: " ", with: "")
-            .isEmpty else { throw RecordMessageError.onlyWhitespace }
     }
 }
