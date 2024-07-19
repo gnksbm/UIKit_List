@@ -17,6 +17,8 @@
 		BE2848C32C00A59A00D5E817 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C22C00A59A00D5E817 /* TodoModel.swift */; };
 		BE2848C52C00A6DC00D5E817 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C42C00A6DC00D5E817 /* UserDefaultsKey.swift */; };
 		BE2848C92C00A70300D5E817 /* ListKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848C82C00A70300D5E817 /* ListKind.swift */; };
+		BE2AFB132C4A307B00C6718C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2AFB122C4A307B00C6718C /* SettingViewController.swift */; };
+		BE2AFB162C4A5FC700C6718C /* SettingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2AFB152C4A5FC700C6718C /* SettingCollectionView.swift */; };
 		BE9D17072BFF2C8D00F75525 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */; };
 		BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */; };
 		BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9D170A2BFF410500F75525 /* RecordMessageError.swift */; };
@@ -37,6 +39,8 @@
 		BE2848C22C00A59A00D5E817 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		BE2848C42C00A6DC00D5E817 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		BE2848C82C00A70300D5E817 /* ListKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKind.swift; sourceTree = "<group>"; };
+		BE2AFB122C4A307B00C6718C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		BE2AFB152C4A5FC700C6718C /* SettingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionView.swift; sourceTree = "<group>"; };
 		BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		BE9D17082BFF40BB00F75525 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		BE9D170A2BFF410500F75525 /* RecordMessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMessageError.swift; sourceTree = "<group>"; };
@@ -87,11 +91,21 @@
 			path = SeSac_0523_TableViewCase;
 			sourceTree = "<group>";
 		};
+		BE2AFB142C4A5FB900C6718C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				BE2AFB122C4A307B00C6718C /* SettingViewController.swift */,
+				BE2AFB152C4A5FC700C6718C /* SettingCollectionView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		BE9D17102BFF414B00F75525 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BE9D17062BFF2C8D00F75525 /* RecordViewController.swift */,
 				BE9D170E2BFF413200F75525 /* RecordTableViewCell.swift */,
+				BE2AFB142C4A5FB900C6718C /* Setting */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				BE9D170D2BFF412100F75525 /* ShoppingModel.swift in Sources */,
 				BE9D170F2BFF413200F75525 /* RecordTableViewCell.swift in Sources */,
 				BE2848C92C00A70300D5E817 /* ListKind.swift in Sources */,
+				BE2AFB132C4A307B00C6718C /* SettingViewController.swift in Sources */,
 				BE9D170B2BFF410500F75525 /* RecordMessageError.swift in Sources */,
 				BE9D17092BFF40BB00F75525 /* UserDefaultsWrapper.swift in Sources */,
 				BE068E792BFF27410014D9C4 /* AppDelegate.swift in Sources */,
@@ -201,6 +216,7 @@
 				BE068E7B2BFF27410014D9C4 /* SceneDelegate.swift in Sources */,
 				BE2848C32C00A59A00D5E817 /* TodoModel.swift in Sources */,
 				BE2848C52C00A6DC00D5E817 /* UserDefaultsKey.swift in Sources */,
+				BE2AFB162C4A5FC700C6718C /* SettingCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
